@@ -194,46 +194,49 @@ class MegaventoryQuantity:
 
 if __name__ == "__main__":
     try:
-        megaventoryProduct = Megaventoryproduct("6945f581fc8e7cef@m150627")
-        megaventoryProduct1 = Megaventoryproduct("6945f581fc8e7cef@m150627")
-        Megaventoryclient = MegaventoryClient("6945f581fc8e7cef@m150627")
-        Megaventoryclient1 = MegaventoryClient("6945f581fc8e7cef@m150627")
-        Megaventoryinventory = MegaventoryInventory("6945f581fc8e7cef@m150627")
-        megaventoryPurchase = MegaventoryPurchase("6945f581fc8e7cef@m150627")
-        Megaventoryquantity = MegaventoryQuantity("6945f581fc8e7cef@m150627")
-        Megaventoryquantity1 = MegaventoryQuantity("6945f581fc8e7cef@m150627")
-        Megaventorysales = MegaventorySales("6945f581fc8e7cef@m150627")
+        Product = Megaventoryproduct("6945f581fc8e7cef@m150627")
+        Product1 = Megaventoryproduct("6945f581fc8e7cef@m150627")
+        Client = MegaventoryClient("6945f581fc8e7cef@m150627")
+        Client1 = MegaventoryClient("6945f581fc8e7cef@m150627")
+        Inventory = MegaventoryInventory("6945f581fc8e7cef@m150627")
+        Purchase = MegaventoryPurchase("6945f581fc8e7cef@m150627")
+        Quantity = MegaventoryQuantity("6945f581fc8e7cef@m150627")
+        Quantity1 = MegaventoryQuantity("6945f581fc8e7cef@m150627")
+        Sales = MegaventorySales("6945f581fc8e7cef@m150627")
 
-        product_data = megaventoryProduct.create_product("111", " Puma sneakers2", "Category A", "Gram(s)", "Dummy Supplier A", 79.99, 35.99)
-        product_data1 = megaventoryProduct1.create_product("2299", "New Balance sneakers","Category A", "Gram(s)", "Dummy Supplier A", 89.99, 39.99)
+
+        
+
+        product_data = Product.create_product("111", " Puma sneakers2", "Category A", "Gram(s)", "Dummy Supplier A", 79.99, 35.99)
+        product_data1 = Product1.create_product("2299", "New Balance sneakers","Category A", "Gram(s)", "Dummy Supplier A", 89.99, 39.99)
         time.sleep(2)
-        client = Megaventoryclient.createClient("Michalis", " Mihalis@exampletest.com", "Example 5, Athens", "9876543210","Shipping1","EUR")
-        supplier = Megaventoryclient1.createClient("Helen", "helen@exampletest.com", " Example 6, Athens", " 9876543233","Shipping1","EUR")
+        client = Client.createClient("Michalis", " Mihalis@exampletest.com", "Example 5, Athens", "9876543210","Shipping1","EUR")
+        supplier = Client1.createClient("Helen", "helen@exampletest.com", " Example 6, Athens", " 9876543233","Shipping1","EUR")
         time.sleep(2)
-        inventory = Megaventoryinventory.createInventory("Logi", "Logi Project Location", " Example 28, Athens")
+        inventory = Inventory.createInventory("Logi", "Logi Project Location", " Example 28, Athens")
         time.sleep(2)
-        purchase = megaventoryPurchase.createPurchase("111", "Puma sneakers2","something","EUR","5", 20)
+        purchase = Purchase.createPurchase("111", "Puma sneakers2","something","EUR","5", 20)
         time.sleep(2)
-        sales = Megaventorysales.createSales("6","111","Puma sneakers","EUR","5", 15)
+        sales = Sales.createSales("6","111","Puma sneakers","EUR","5", 15)
         time.sleep(2)
-        quantity = Megaventoryquantity.UpdateQuantity("111", 15, 5)
-        quantity1 = Megaventoryquantity1.UpdateQuantity("1112299", 30, 5)
+        quantity = Quantity.UpdateQuantity("111", 15, 5)
+        quantity1 = Quantity1.UpdateQuantity("1112299", 30, 5)
     
 
 
 
-        print(megaventoryProduct.send_data(product_data, megaventoryProduct.url_product))
-        print(megaventoryProduct1.send_data(product_data1, megaventoryProduct1.url_product))
+        print(Product.send_data(product_data, Product.url_product))
+        print(Product1.send_data(product_data1, Product1.url_product))
 
-        print(Megaventoryclient.send_data(client, Megaventoryclient.url_supplier_client))
-        print(Megaventoryclient1.send_data(supplier, Megaventoryclient.url_supplier_client))
+        print(client.send_data(client, Client.url_supplier_client))
+        print(supplier.send_data(supplier, Client.url_supplier_client))
 
-        print(Megaventoryinventory.send_data(inventory, Megaventoryinventory.url_inventory))
+        print(Inventory.send_data(inventory, Inventory.url_inventory))
 
-        print(megaventoryPurchase.send_data(purchase, megaventoryPurchase.url_order))
-        print(Megaventorysales.send_data(sales,Megaventorysales.url_Sales))
-        print(Megaventoryquantity.send_data(quantity, Megaventoryquantity.url_Quantity))
-        print(Megaventoryquantity1.send_data(quantity1, Megaventoryquantity1.url_Quantity))
+        print(Purchase.send_data(purchase, Purchase.url_order))
+        print(Sales.send_data(sales,Sales.url_Sales))
+        print(quantity.send_data(quantity, Quantity.url_Quantity))
+        print(quantity1.send_data(quantity1, Quantity1.url_Quantity))
 
     except Exception as e:
        print(e)
