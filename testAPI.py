@@ -228,15 +228,15 @@ if __name__ == "__main__":
         print(Product.send_data(product_data, Product.url_product))
         print(Product1.send_data(product_data1, Product1.url_product))
 
-        print(client.send_data(client, Client.url_supplier_client))
-        print(supplier.send_data(supplier, Client.url_supplier_client))
+        print(Client.send_data(client, Client.url_supplier_client))
+        print(Client1.send_data(supplier, Client.url_supplier_client))
 
         print(Inventory.send_data(inventory, Inventory.url_inventory))
 
         print(Purchase.send_data(purchase, Purchase.url_order))
         print(Sales.send_data(sales,Sales.url_Sales))
-        print(quantity.send_data(quantity, Quantity.url_Quantity))
-        print(quantity1.send_data(quantity1, Quantity1.url_Quantity))
+        print(Quantity.send_data(quantity, Quantity.url_Quantity))
+        print(Quantity1.send_data(quantity1, Quantity1.url_Quantity))
 
     except Exception as e:
        print(e)
